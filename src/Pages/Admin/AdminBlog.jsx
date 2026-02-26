@@ -19,11 +19,11 @@ const AdminBlog = () => {
       dispatch(setLoading())
       let response
       if (selectedItemForEdit) {
-        response = await axios.post("https://evolve-with-rahul.vercel.app/api/yoga/update-blog", { ...values, image, _id: selectedItemForEdit._id }, {
+        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/yoga/update-blog`, { ...values, image, _id: selectedItemForEdit._id }, {
           headers: { "Content-Type": "multipart/form-data" }
         })
       } else {
-        response = await axios.post("https://evolve-with-rahul.vercel.app/api/yoga/add-blog", { ...values, image }, {
+        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/yoga/add-blog`, { ...values, image }, {
           headers: { "Content-Type": "multipart/form-data" }
         })
       }
@@ -48,7 +48,7 @@ const AdminBlog = () => {
   const onDelete = async (item) => {
     try {
       dispatch(setLoading())
-      const response = await axios.post("https://evolve-with-rahul.vercel.app/api/yoga/delete-blog", { _id: item._id })
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/yoga/delete-blog`, { _id: item._id })
       dispatch(hideLoading())
       if (response.data.success) {
         message.success(response.data.message)

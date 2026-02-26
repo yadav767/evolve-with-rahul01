@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
     const [auth, setAuth] = useState(null); 
 
     useEffect(() => {
-        axios.get("https://evolve-with-rahul.vercel.app/api/auth/check-auth", { withCredentials: true })
+        axios.get(`${import.meta.env.VITE_API_URL}/api/auth/check-auth`, { withCredentials: true })
             .then(res => setAuth(res.data.authenticated))
             .catch(() => {
                 setAuth(false)
