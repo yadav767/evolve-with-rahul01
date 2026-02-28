@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { Phone, Mail, Send, MessageCircle } from 'lucide-react';
 import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
+import { message } from 'antd';
 
 import axios from 'axios';
 
