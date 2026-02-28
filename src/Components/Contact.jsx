@@ -78,7 +78,7 @@ const Contact = () => {
         }, 3000);
       } else {
         console.log(response.data);
-        message.error(response.data.message)
+        message.error("Failed to submit the form. Please try again later.")
       }
     } catch (error) {
       console.log(error);
