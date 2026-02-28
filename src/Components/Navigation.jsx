@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X,Leaf} from 'lucide-react';
+import { Menu, X, Leaf } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
@@ -28,10 +28,12 @@ const Navigation = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <Leaf size={28} />
+          <div className='h-12 w-12 '>
+            <img src="https://ik.imagekit.io/4e15dkbzg/favicon2.jpeg" className=' rounded-full h-full w-full object-center mix-blend-multiply' alt="" />
+          </div>
           <span>Evolve With Rahul</span>
         </Link>
-        
+
         <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link, index) => (
             <Link
@@ -44,7 +46,7 @@ const Navigation = () => {
             </Link>
           ))}
         </div>
-        
+
         <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

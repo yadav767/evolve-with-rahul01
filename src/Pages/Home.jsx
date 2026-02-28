@@ -22,13 +22,13 @@ const Home = () => {
             <Journey />
             <UniqueTeaching />
             <Experience />
-            <ClientBenefits />
-            <Nutrition />
             <Vision />
+            <ClientBenefits />
+            {/* <Nutrition /> */}
             <Investment />
             <Offerings />
-            <Blog />
             <Contact />
+            <Blog />
             <Footer />
         </div>
     )

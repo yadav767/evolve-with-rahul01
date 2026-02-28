@@ -1,8 +1,10 @@
 import React, { useState, } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { Phone, Mail, Send } from 'lucide-react';
-import { message } from 'antd'
+import { Phone, Mail, Send, MessageCircle } from 'lucide-react';
+import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+
 import axios from 'axios';
 
 
@@ -63,7 +65,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission
-    if(!validate()) return 
+    if (!validate()) return
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/form/submit`, formData)
       if (response.data.status) {
@@ -75,10 +77,12 @@ const Contact = () => {
           setSuccessMessage('');
         }, 3000);
       } else {
-        message.error("Email already sent using this email !")
+        console.log(response.data);
+        // message.error("Email already sent using this email !")
       }
     } catch (error) {
-      message.error("Email already sent using this email !")
+      console.log(error);
+      // message.error("Email already sent using this email !")
     }
 
 
@@ -109,7 +113,7 @@ const Contact = () => {
               <Phone className="contact-icon" />
               <div>
                 <h4>Phone</h4>
-                <a href="tel:9022216182">9022216182</a>
+                <a href="tel:9022216182">+91-9022216182</a>
               </div>
             </div>
 
@@ -132,6 +136,33 @@ const Contact = () => {
                 <div className="step-number">2</div>
                 <h4>Begin Partnership</h4>
                 <p>Start transforming lives through holistic wellness</p>
+              </div>
+              <div className='flex items-center justify-center gap-4'>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=919022216182&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#006400' }}
+                >
+                  <FaWhatsapp size={39} />
+                </a>
+                <a
+                  href="https://www.instagram.com/evolvewithrahul/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#006400' }}
+                >
+                  <FaInstagram size={39} />
+
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/rahul-yadav-9171b3182/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#006400' }}
+                >
+                  <FaLinkedin size={39} />
+                </a>
               </div>
             </div>
           </div>

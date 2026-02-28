@@ -172,6 +172,7 @@ h6 {
 }
 
 .nav-toggle {
+  /* z-index: 100; */
   display: none;
   background: none;
   border: none;
