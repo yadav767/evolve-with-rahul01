@@ -78,11 +78,11 @@ const Contact = () => {
         }, 3000);
       } else {
         console.log(response.data);
-        // message.error("Email already sent using this email !")
+        message.error(response.data.message)
       }
     } catch (error) {
       console.log(error);
-      // message.error("Email already sent using this email !")
+      message.error("An error occurred while submitting the form. Please try again later.")
     }
 
 
@@ -214,7 +214,7 @@ const Contact = () => {
                 <option value="">Select a service</option>
                 <option value="Personal 1-on-1 Sessions">Personal 1-on-1 Sessions</option>
                 <option value="Group Classes">Group Classes</option>
-                <option value="Corporate Wellness Programs">Corporate Wellness Programs</option>
+                <option value="Book 3 Trial sessions">Book 3 Trial sessions</option>
               </select>
             </div>
 
